@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 
-const openPort = 9456
+const openPort = 9423
 module.exports = {
   pages: {
     page1: {

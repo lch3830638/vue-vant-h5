@@ -1,6 +1,4 @@
-// import Vue from 'vue'
-import routes from './routes'
-import genRouter from '@/utils/genRouter'
+import Index from './index'
 import genVue from '@/utils/genVue'
 
-genVue({ router: genRouter({ routes }) })
+genVue({ render: h => h(Index) })
