@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 // 生成路由的函数
-export default function(config = {}) {
+export default function(config = {}, beforeEachExtend) {
   const defaultConfig = {
     base: process.env.BASE_URL,
     scrollBehavior(to, from, savedPosition) {
@@ -23,6 +23,7 @@ export default function(config = {}) {
     if (to.meta.title) {
       document.title = to.meta.title
     }
+    if (beforeEachExtend) beforeEachExtend(to, from, next)
     next()
   })
   return router

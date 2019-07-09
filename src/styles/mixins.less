@@ -1,0 +1,36 @@
+// flex居中
+.flexMiddle {
+  display: flex;
+  align-items: center;
+}
+// 定高flex居中
+.flexMiddleHeight(@height) {
+  .flexMiddle;
+  height: @height;
+}
+
+// flex居中两端对齐
+.flexMiddleBetween {
+  .flexMiddle;
+  justify-content: space-between;
+}
+
+// flex定高居中两端对齐
+.flexMiddleHeightBetween(@height) {
+  .flexMiddleBetween;
+  height: @height;
+}
+
+// 行高居中
+.lineHeightMiddle(@height) {
+  height: @height;
+  line-height: @height;
+}
+
+// 文本溢出隐藏
+.textOverflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}

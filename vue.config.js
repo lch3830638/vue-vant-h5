@@ -1,5 +1,6 @@
-const webpack = require('webpack')
 const path = require('path')
+const apiMocker = require('mocker-api')
+const customTheme = require('./customTheme')
 
 const openPort = 9423
 module.exports = {
@@ -18,22 +19,31 @@ module.exports = {
     }
   },
   devServer: {
-    port: openPort
+    port: openPort,
+    index: 'page1.html',
+    before: app => {
+      apiMocker(app, path.resolve('./mock/index.js'))
+    },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8010',
+        changeOrigin: true,
+        pathRewrite: { '^/api': '' }
+      }
+    }
+  },
+  css: {
+    loaderOptions: {
+      less: {
+        modifyVars: customTheme
+      }
+    }
   },
   configureWebpack: {
     resolve: {
       alias: {
-        '@': path.join(__dirname, 'src')
+        root: __dirname
       }
-    },
-    plugins: [
-      new webpack.DefinePlugin({
-        // 服务器地址
-        SERVER_ADDRESS:
-          process.env.NODE_ENV === 'production'
-            ? JSON.stringify('线上服务器地址')
-            : JSON.stringify(`http://localhost:${openPort}`)
-      })
-    ]
+    }
   }
 }
