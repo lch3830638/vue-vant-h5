@@ -10,7 +10,6 @@
 
 - Vetur,代码高亮，提示，格式化等功能
 - ESLint，对团队 js 代码进行检查
-- prettier-code formatter 统一代码格式化风格
 
 ### 配置
 
@@ -18,39 +17,19 @@
 在 json 文件中添加如下配置即可
 
 ```
-  "search.followSymlinks": false, //关闭rg.exe进程
-  "editor.minimap.enabled": false, //关闭快速预览
-  "files.autoSave": "afterDelay", //打开自动保存
-  "editor.lineNumbers": "on", //开启行数提示
-  "editor.quickSuggestions": {
-    //开启自动显示建议
-    "other": true,
-    "comments": true,
-    "strings": true
-  },
   "editor.tabSize": 2, //制表符符号eslint
-  "editor.formatOnSave": true, //每次保存自动格式化
-  "eslint.autoFixOnSave": true, // 每次保存的时候将代码按eslint格式进行修复
-  "prettier.eslintIntegration": true, //让prettier使用eslint的代码格式进行校验
-  "prettier.semi": false, //去掉代码结尾的分号
-  "prettier.jsxBracketSameLine": true, //将>多行JSX元素放在最后一行的末尾，而不是单独放在下一行
-  "prettier.singleQuote": true, //使用带引号替代双引号
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false, //让函数(名)和后面的括号之间加个空格
   "vetur.format.defaultFormatter.html": "js-beautify-html", //格式化.vue中html
   "vetur.format.defaultFormatter.js": "vscode-typescript", //让vue中的js按编辑器自带的ts格式进行格式化
   "eslint.validate": [
-    //开启对.vue文件中错误的检查
     "javascript",
     "javascriptreact",
-    {
-      "language": "html",
-      "autoFix": true
-    },
-    {
-      "language": "vue",
-      "autoFix": true
-    }
-  ]
+    "vue"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+  }
 ```
 
 ## 开发事项
