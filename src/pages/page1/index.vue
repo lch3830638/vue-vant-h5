@@ -9,9 +9,15 @@
 
 <script>
 import { Button } from 'vant'
+import { getList } from '@/apis/page1'
 export default {
   components: {
     Button,
+  },
+  mounted() {
+    getList().then(res => {
+      console.log(res)
+    })
   },
 }
 </script>
