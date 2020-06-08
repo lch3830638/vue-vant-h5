@@ -10,5 +10,5 @@ module.exports = {
   'button-large-line-height': '50px',
   'button-default-color': '#999',
   'button-default-font-size': '18px',
-  'button-border-radius': '4px'
+  'button-border-radius': '4px',
 }

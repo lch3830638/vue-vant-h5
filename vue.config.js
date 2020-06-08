@@ -9,14 +9,14 @@ module.exports = {
       entry: 'src/pages/page1/main.js',
       template: 'public/index.html',
       filename: 'page1.html',
-      title: '页面1'
+      title: '页面1',
     },
     page2: {
       entry: 'src/pages/page2/main.js',
       template: 'public/index.html',
       filename: 'page2.html',
-      title: '页面2'
-    }
+      title: '页面2',
+    },
   },
   devServer: {
     port: openPort,
@@ -28,22 +28,24 @@ module.exports = {
       '/api': {
         target: 'http://localhost:8010',
         changeOrigin: true,
-        pathRewrite: { '^/api': '' }
-      }
-    }
+        pathRewrite: {
+          '^/api': '',
+        },
+      },
+    },
   },
   css: {
     loaderOptions: {
       less: {
-        modifyVars: customTheme
-      }
-    }
+        modifyVars: customTheme,
+      },
+    },
   },
   configureWebpack: {
     resolve: {
       alias: {
-        root: __dirname
-      }
-    }
-  }
+        root: __dirname,
+      },
+    },
+  },
 }

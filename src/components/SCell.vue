@@ -16,14 +16,17 @@
 </template>
 
 <script>
-import { Cell } from 'vant'
-import { getSlotListMixin } from '@/mixins'
+import {
+  Cell,
+} from 'vant'
+import {
+  getSlotListMixin,
+} from '@/mixins'
 
 export default {
   components: {
-    Cell
+    Cell,
   },
-  mixins: [getSlotListMixin]
+  mixins: [getSlotListMixin],
 }
 </script>
-
