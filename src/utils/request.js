@@ -1,7 +1,5 @@
 import axios from 'axios'
-import {
-  Toast,
-} from 'vant'
+import { Toast } from 'vant'
 
 let toastLoading
 let noLoading
@@ -45,9 +43,7 @@ server.interceptors.request.use(config => {
 server.interceptors.response.use(
   res => {
     handleLoading()
-    const {
-      data,
-    } = res
+    const { data } = res
     return data
   },
   error => {
@@ -55,9 +51,7 @@ server.interceptors.response.use(
     if (error.message.indexOf('timeout') !== -1) {
       message = '请求超时，请刷新页面重试'
     } else {
-      const {
-        status: httpStatus,
-      } = error.response
+      const { status: httpStatus } = error.response
       message = codeMessage[httpStatus] || '请求错误'
     }
     handleLoading(() => {

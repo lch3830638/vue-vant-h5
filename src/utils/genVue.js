@@ -17,9 +17,7 @@ Object.keys(directives).forEach(key => {
 })
 
 // 生成vue实例的函数
-export default function({
-  data, ...restConfig
-}, el = '#app') {
+export default function({ data, ...restConfig }, el = '#app') {
   const defaultConfig = {
     data: {
       BASE_URL: process.env.BASE_URL,
