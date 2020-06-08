@@ -37,7 +37,9 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
-        modifyVars: customTheme,
+        lessOptions: {
+          modifyVars: customTheme,
+        },
       },
     },
   },
