@@ -5,7 +5,8 @@ const page1 = require('./page1')
 const noProxy = process.env.NO_PROXY === 'true'
 
 const proxy = {
-  ...page1
+  ...page1,
 }
 
-module.exports = noProxy ? {} : delay(proxy, 300)
+module.exports = noProxy ? {
+} : delay(proxy, 300)

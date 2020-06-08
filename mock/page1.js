@@ -6,9 +6,9 @@ const parkList = Mock.mock({
     {
       'id|+1': 1,
       parkName: /大车场[1-9]/,
-      parkAddr: '@city()'
-    }
-  ]
+      parkAddr: '@city()',
+    },
+  ],
 }).data
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
     res.json({
       code: '0',
       message: '',
-      parkList
+      parkList,
     })
-  }
+  },
 }
