@@ -24,7 +24,22 @@ module.exports = {
     'vue/no-reserved-keys': 0,
     'comma-dangle': ['error', 'always-multiline'],
     'generator-star-spacing': 'off',
-    'object-curly-newline': ['error', 'always'],
+    'object-curly-newline': ['error', {
+      ObjectExpression: 'always',
+      ObjectPattern: {
+        multiline: true,
+        minProperties: 3,
+      },
+      ImportDeclaration: {
+        multiline: true,
+        minProperties: 4,
+      },
+      ExportDeclaration: {
+        multiline: true,
+        minProperties: 1,
+      },
+    },
+    ],
     'object-property-newline': ['error', {
       allowMultiplePropertiesPerLine: false,
     }],
