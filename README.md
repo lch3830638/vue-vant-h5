@@ -35,6 +35,7 @@
 
 ## 开发事项
 
+- 多页中的页面跳转可以使用this.$root.BASE_URL(对应项目的publicPath)加上页面地址(如：'${this.$root.BASE_URL}page2.html')
 - 对 ajax 请求进行了统一封装，详见 src/utils/request,文件中注释部分需要根据自身调整
 - 页面全部放在 src/pages 下，新建文件后要在 vue.config.js 文件中的 pages 选项中对应添加。page1 为普通页面，page2 实际上有两个页面，使用单页面
 - 接口统一放在 src/apis 下，与 src/pages 一一对应，公共的接口可新建一个的 js 文件
