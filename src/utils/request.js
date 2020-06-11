@@ -61,8 +61,7 @@ server.interceptors.response.use(
   },
 )
 
-export default (config = {
-}, notLoading) => {
+export default (config = {}, notLoading) => {
   noLoading = notLoading
   if (!noLoading) {
     requestStartTime = new Date().getTime()

@@ -3,8 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 // 生成路由的函数
-export default function(config = {
-}, beforeEachExtend) {
+export default function(config = {}, beforeEachExtend) {
   const defaultConfig = {
     base: process.env.BASE_URL,
     scrollBehavior(to, from, savedPosition) {

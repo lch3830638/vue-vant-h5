@@ -8,5 +8,4 @@ const proxy = {
   ...page1,
 }
 
-module.exports = noProxy ? {
-} : delay(proxy, 300)
+module.exports = noProxy ? {} : delay(proxy, 300)
