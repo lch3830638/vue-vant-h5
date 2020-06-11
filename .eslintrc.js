@@ -25,7 +25,10 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     'generator-star-spacing': 'off',
     'object-curly-newline': ['error', {
-      ObjectExpression: 'always',
+      ObjectExpression: {
+        multiline: true,
+        minProperties: 1,
+      },
       ObjectPattern: {
         multiline: true,
         minProperties: 3,
